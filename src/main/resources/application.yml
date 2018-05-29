@@ -1,0 +1,6 @@
+camel:
+  springboot:
+    name: RestCamel
+    timer: 5000
+    consumer: www.ing.nl/api/locator/atms/
+    producer: localhost:8080/test/
