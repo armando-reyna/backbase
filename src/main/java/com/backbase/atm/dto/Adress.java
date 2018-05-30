@@ -1,12 +1,37 @@
 package com.backbase.atm.dto;
 
-public class AdressDTO {
+import javax.persistence.*;
 
+@Entity
+@Table(name = "address")
+public class Adress {
+
+    @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    private Long id;
+
+    @Column
     private String street;
+
+    @Column
     private String housenumber;
+
+    @Column
     private String postalcode;
+
+    @Column
     private String city;
-    private GeolocationDTO geoLocation;
+
+    @ManyToOne(optional = false, cascade = CascadeType.ALL)
+    private Geolocation geoLocation;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getStreet() {
         return street;
@@ -40,18 +65,19 @@ public class AdressDTO {
         this.city = city;
     }
 
-    public GeolocationDTO getGeoLocation() {
+    public Geolocation getGeoLocation() {
         return geoLocation;
     }
 
-    public void setGeoLocation(GeolocationDTO geoLocation) {
+    public void setGeoLocation(Geolocation geoLocation) {
         this.geoLocation = geoLocation;
     }
 
     @Override
     public String toString() {
-        return "AdressDTO{" +
-                "street='" + street + '\'' +
+        return "Adress{" +
+                "id=" + id +
+                ", street='" + street + '\'' +
                 ", housenumber='" + housenumber + '\'' +
                 ", postalcode='" + postalcode + '\'' +
                 ", city='" + city + '\'' +

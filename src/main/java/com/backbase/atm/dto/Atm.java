@@ -1,16 +1,37 @@
 package com.backbase.atm.dto;
 
-public class AtmDTO {
+import javax.persistence.*;
 
-    private AdressDTO address;
+@Entity
+@Table(name = "atm")
+public class Atm {
+
+    @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    private Long id;
+
+    @ManyToOne(optional = false, cascade = CascadeType.ALL)
+    private Adress address;
+
+    @Column
     private Long distance;
+
+    @Column
     private String type;
 
-    public AdressDTO getAddress() {
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Adress getAddress() {
         return address;
     }
 
-    public void setAddress(AdressDTO address) {
+    public void setAddress(Adress address) {
         this.address = address;
     }
 
@@ -32,8 +53,9 @@ public class AtmDTO {
 
     @Override
     public String toString() {
-        return "AtmDTO{" +
-                "address=" + address +
+        return "Atm{" +
+                "id=" + id +
+                ", address=" + address +
                 ", distance=" + distance +
                 ", type='" + type + '\'' +
                 '}';

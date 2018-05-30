@@ -1,0 +1,18 @@
+body{
+    background-color: #efefef;
+}
+span.spacing{
+    margin-right: 10px;
+}
+input.custom-width{
+    width: 200px;
+}
+input.spacing{
+    margin-right: 5px;
+}
+.pagination {
+    cursor: pointer;
+}
+.space-md{
+    margin-bottom: 20px;
+}
