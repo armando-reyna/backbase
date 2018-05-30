@@ -62,6 +62,7 @@ http://airsoftware.solutions:8080
 
 ### Configuration
 - Update *application.yml* with the producer url in case tomcat will run in a different port than 8090 
+- Update *src/main/resources/static/js/app/app.js* with the API url in case the context of the application changes 
 - All configurations can be edited within the *application.yml* file
 - No external configuration is needed, even the database is created automatically with h2database
 
