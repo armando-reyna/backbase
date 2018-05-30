@@ -27,6 +27,7 @@ public class AtmServiceImpl implements AtmService {
         ObjectMapper objectMapper = new ObjectMapper();
         List<Atm> atms = objectMapper.readValue(atmsSt, new TypeReference<List<Atm>>() {});
         for (Atm atm : atms) {
+            log.info("Save Atm " + atm.toString());
             atmRepository.saveAndFlush(atm);
         }
     }

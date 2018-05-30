@@ -10,6 +10,15 @@ spring:
     view:
       prefix: /WEB-INF/jsp/
       suffix: .jsp
+logging:
+  file: /var/log/backbase.log
+  pattern:
+    console: "%d %-5level %logger : %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss.SSS} %-5p [%-10.10t] %c{1} - %msg%n"
+  level:
+    com.backbase.atm: INFO
+    org.hibernate: INFO
+    org.springframework.web.filter.CommonsRequestLoggingFilter: DEBUG
 camel:
   springboot:
     name: RestCamel
