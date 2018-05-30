@@ -3,7 +3,6 @@ package com.backbase.atm.service.impl;
 import org.apache.camel.Exchange;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.component.http4.HttpMethods;
-import org.apache.log4j.Logger;
 import org.springframework.stereotype.Component;
 
 @Component
