@@ -33,15 +33,16 @@ The solution is built with the following technologies:
 #### Explanation
 
 1. The solution uses org.apache.camel.builder.RouteBuilder & org.apache.camel.component.http4.HttpMethods to consume the REST API
-2. Once the atm's API is consumed: https://www.ing.nl/api/locator/atms/ the camel services passes the outputs to an internal REST Service '/api/v1/atm' POST
-3. This service processes the info and stores it into the database
-4. An other service has been created to get the ATM's list
-5. This service is paginated
-6. A page with the list of ATM's is available
-7. The application requires authentication made with spring security, please use the following credentials to login:
+2. camel.springboot.timer property under application.yml is the time range for each call
+3. Once the atm's API is consumed: https://www.ing.nl/api/locator/atms/ the camel services passes the outputs to an internal REST Service '/api/v1/atm' POST
+4. This service processes the info and stores it into the database
+5. An other service has been created to get the ATM's list
+6. This service is paginated
+7. A page with the list of ATM's is available
+8. The application requires authentication made with spring security, please use the following credentials to login:
 `user: bobby`
 `password: password`
-8. Tha application has been deployed using Github + Jenkins
+9. Tha application has been deployed using Github + Jenkins
 
 ### Demo
 http://airsoftware.solutions:9080/backbase/
@@ -53,9 +54,9 @@ http://airsoftware.solutions:9080/backbase/
 http://airsoftware.solutions:9080/backbase/api/v1/atm
 
 ### Jenkins
-http://airsoftware.solutions:9080/backbase/
+http://airsoftware.solutions:8080
 
-`user: jenkins`
+`user: airsoftware`
 `password: 41rs0ftw4r3#J3nk1ns`
 
 ### Build the Project

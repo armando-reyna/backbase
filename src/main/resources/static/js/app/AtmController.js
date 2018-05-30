@@ -9,7 +9,6 @@ module.controller("AtmController", ["$scope", "AtmService",
 
     $scope.getAtms = function () {
       AtmService.getAtms($scope.page, $scope.limit, $scope.city).then(function (response) {
-        console.log(response);
         $scope.data = response.data;
       }, function (reason) {
         console.error("Error getting the atm's list." + reason);
