@@ -29,6 +29,7 @@ The solution is built with the following technologies:
 - Bootstrap
 - Github
 - Jenkins
+- IntelliJ (IDE)
 
 #### Explanation
 
@@ -59,9 +60,10 @@ http://airsoftware.solutions:8080
 `user: airsoftware`
 `password: 41rs0ftw4r3#J3nk1ns`
 
-### Build the Project
-All configurations can be edited within the *application.yml* file
-No external configuration is needed, even the database is created automatically.
+### Configuration
+- Update *application.yml* with the producer url in case tomcat will run in a different port than 8090 
+- All configurations can be edited within the *application.yml* file
+- No external configuration is needed, even the database is created automatically with h2database
 
 ### Build the Project
 ```
