@@ -42,7 +42,7 @@ The solution is built with the following technologies:
 8. The application requires authentication made with spring security, please use the following credentials to login:
 `user: bobby`
 `password: password`
-9. Tha application has been deployed using Github + Jenkins
+9. Tha application has been deployed using Github + Jenkins + Tomcat
 
 ### Demo
 http://airsoftware.solutions:9080/backbase/
