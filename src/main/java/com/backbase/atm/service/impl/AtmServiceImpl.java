@@ -7,6 +7,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -27,8 +28,12 @@ public class AtmServiceImpl implements AtmService {
         ObjectMapper objectMapper = new ObjectMapper();
         List<Atm> atms = objectMapper.readValue(atmsSt, new TypeReference<List<Atm>>() {});
         for (Atm atm : atms) {
-            log.info("Save Atm " + atm.toString());
-            atmRepository.saveAndFlush(atm);
+            log.debug("Save Atm " + atm.toString());
+            try {
+                atmRepository.saveAndFlush(atm);
+            } catch (DataIntegrityViolationException ex) {
+                log.debug("Atm already exists.");
+            }
         }
     }
 

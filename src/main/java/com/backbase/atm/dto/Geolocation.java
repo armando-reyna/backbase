@@ -3,7 +3,7 @@ package com.backbase.atm.dto;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "geolocation")
+@Table(name = "geolocation", uniqueConstraints = @UniqueConstraint(name = "uc_address", columnNames = {"lat", "lng"}))
 public class Geolocation {
 
     @Id

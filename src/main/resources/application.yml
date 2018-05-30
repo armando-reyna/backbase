@@ -11,17 +11,17 @@ spring:
       prefix: /WEB-INF/jsp/
       suffix: .jsp
 logging:
-  file: /var/log/backbase.log
   pattern:
     console: "%d %-5level %logger : %msg%n"
     file: "%d{yyyy-MM-dd HH:mm:ss.SSS} %-5p [%-10.10t] %c{1} - %msg%n"
   level:
     com.backbase.atm: INFO
-    org.hibernate: INFO
+    org.hibernate: ERROR
     org.springframework.web.filter.CommonsRequestLoggingFilter: DEBUG
 camel:
   springboot:
     name: RestCamel
-    timer: 3600000
+    timer: 5000
     consumer: www.ing.nl/api/locator/atms/
     producer: localhost:9080/backbase/api/v1/atm/
+#    producer: localhost:8080/api/v1/atm/
