@@ -44,10 +44,19 @@ The solution is built with the following technologies:
 8. Tha application has been deployed using Github + Jenkins
 
 ### Demo
-http://backbase.airsoftware.solutions
+http://airsoftware.solutions:9080/backbase/
 
 `user: bobby`
 `password: password`
+
+### ATM's API
+http://airsoftware.solutions:9080/backbase/api/v1/atm
+
+### Jenkins
+http://airsoftware.solutions:9080/backbase/
+
+`user: jenkins`
+`password: 41rs0ftw4r3#J3nk1ns`
 
 ### Build the Project
 All configurations can be edited within the *application.yml* file
